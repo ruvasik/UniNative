@@ -1,0 +1,10 @@
+.idea
+node_modules
+
+# ESLint
+.eslintcache
+
+# Prettier
+.prettier.cache
+
+coverage

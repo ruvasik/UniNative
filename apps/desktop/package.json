@@ -1,0 +1,35 @@
+{
+  "name": "desktop",
+  "version": "1.0.0",
+  "main": "src/main.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "watch-electron": "tsc -p tsconfig.electron.json --watch",
+    "electron": "wait-on tcp:5173 && cross-env NODE_ENV=development nodemon --watch dist --exec electron dist/main.js",
+    "start": "concurrently -k \"yarn dev\" \"yarn watch-electron\" \"yarn electron\""
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@uninative/ui": "1.0.0",
+    "electron": "^32.1.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-native-paper": "^5.12.5",
+    "react-native-safe-area-context": "^4.11.0",
+    "react-native-vector-icons": "^10.2.0",
+    "react-native-web": "^0.19.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^9.0.1",
+    "cross-env": "^7.0.3",
+    "electron-builder": "^25.0.5",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8",
+    "vite-plugin-react-native-web": "^1.1.2",
+    "vite-tsconfig-paths": "^5.0.1",
+    "wait-on": "^8.0.1"
+  }
+}

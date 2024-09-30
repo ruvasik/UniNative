@@ -1,0 +1,9 @@
+{
+  "expo": {
+    "name": "mobile",
+    "slug": "plan-mobile",
+    "version": "1.0.0",
+    "assetBundlePatterns": ["**/*"],
+    "entryPoint": "./index.js"
+  }
+}

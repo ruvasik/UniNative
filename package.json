@@ -2,6 +2,7 @@
   "name": "uninative",
   "description": "React Native components-based boilerplate for web, Expo, and Electron",
   "version": "1.0.0",
+  "private": true,
   "workspaces": [
     "packages/*",
     "apps/*"
@@ -13,7 +14,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "cleanLib": "rm -rf yarn.lock node_modules apps/desktop/node_modules apps/web/node_modules apps/mobile/node_modules packages/ui/node_modules"
+    "cleanLib": "npx rimraf yarn.lock node_modules apps/desktop/node_modules apps/web/node_modules apps/mobile/node_modules packages/ui/node_modules"
   },
   "devDependencies": {
     "@babel/plugin-transform-class-properties": "^7.25.4",
@@ -42,6 +43,7 @@
     "prettier": "^3.3.3",
     "react-native-gesture-handler": "^2.20.0",
     "react-test-renderer": "^18.3.1",
+    "rimraf": "^6.0.1",
     "ts-jest": "^29.2.5"
   },
   "license": "MPL-2.0"

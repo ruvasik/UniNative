@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
 import reactNativeWeb from 'vite-plugin-react-native-web';
-// @ts-ignore
 
 export default defineConfig({
   root: path.join(__dirname, 'src/renderer'),

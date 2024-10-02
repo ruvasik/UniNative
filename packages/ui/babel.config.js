@@ -5,6 +5,7 @@ module.exports = {
       'module-resolver',
       {
         alias: {
+          // Добавляем алиас для react-native-vector-icons
           'react-native-vector-icons': 'react-native-vector-icons',
         },
         extensions: ['.js', '.jsx', '.ts', '.tsx'],

@@ -4,11 +4,12 @@ import ReactDOM from 'react-dom';
 import { View } from 'react-native';
 
 import { TestScreen } from '@uninative/ui';
+import { Provider as PaperProvider } from 'react-native-paper';
 
 const App = () => (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+  <PaperProvider>
     <TestScreen />
-  </View>
+  </PaperProvider>
 );
 
 ReactDOM.render(<App />, document.getElementById('root'));

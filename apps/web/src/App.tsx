@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { View } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 
 import { TestScreen } from '@uninative/ui/src/screens/TestScreen';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 function App() {
   return (
     <PaperProvider>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <SafeAreaView>
         <TestScreen />
-      </View>
+      </SafeAreaView>
     </PaperProvider>
   );
 }

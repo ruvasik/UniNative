@@ -8,7 +8,7 @@ import { TestScreen } from '@uninative/ui';
 export default function App() {
   return (
     <PaperProvider>
-      <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <SafeAreaView>
         <TestScreen />
       </SafeAreaView>
     </PaperProvider>

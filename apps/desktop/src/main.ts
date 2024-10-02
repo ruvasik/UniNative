@@ -15,8 +15,6 @@ function createWindow() {
     },
   });
 
-  console.log('NODE_ENV:', process.env.NODE_ENV);
-
   if (process.env.NODE_ENV === 'development') {
     win.loadURL('http://localhost:5173');
   } else {

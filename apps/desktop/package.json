@@ -1,18 +1,27 @@
 {
-  "name": "desktop",
+  "name": "@uninative/desktop",
   "version": "1.0.0",
-  "main": "src/main.ts",
+  "main": "dist/main.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
     "watch-electron": "tsc -p tsconfig.electron.json --watch",
     "electron": "wait-on tcp:5173 && cross-env NODE_ENV=development nodemon --watch dist --exec electron dist/main.js",
-    "start": "concurrently -k \"yarn dev\" \"yarn watch-electron\" \"yarn electron\""
+    "start": "concurrently -k \"yarn dev\" \"yarn watch-electron\" \"yarn electron\"",
+    "build": "tsc && vite build",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "package": "yarn build && yarn build:electron && electron-forge package",
+    "make:macos": "electron-forge make --platform darwin",
+    "make:windows": "electron-forge make --platform win32",
+    "publish": "electron-forge publish"
   },
-  "license": "MIT",
+  "license": "MPL-2.0",
+  "resolutions": {
+    "react-native-web": "^0.19.12",
+    "react-native-safe-area-context": "^4.11.0"
+  },
   "dependencies": {
     "@uninative/ui": "1.0.0",
-    "electron": "^32.1.2",
+    "electron-squirrel-startup": "^1.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-native-paper": "^5.12.5",
@@ -21,10 +30,19 @@
     "react-native-web": "^0.19.12"
   },
   "devDependencies": {
+    "@electron-forge/cli": "^7.5.0",
+    "@electron-forge/maker-deb": "^7.5.0",
+    "@electron-forge/maker-rpm": "^7.5.0",
+    "@electron-forge/maker-squirrel": "^7.5.0",
+    "@electron-forge/maker-zip": "^7.5.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.5.0",
+    "@electron-forge/plugin-fuses": "^7.5.0",
+    "@electron/fuses": "^1.8.0",
+    "@originjs/vite-plugin-commonjs": "^1.0.3",
     "@vitejs/plugin-react": "^4.3.1",
     "concurrently": "^9.0.1",
     "cross-env": "^7.0.3",
-    "electron-builder": "^25.0.5",
+    "electron": "32.1.2",
     "nodemon": "^3.1.7",
     "typescript": "^5.6.2",
     "vite": "^5.4.8",
